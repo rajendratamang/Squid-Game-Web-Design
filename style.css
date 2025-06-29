@@ -115,16 +115,15 @@ header {
   background: #ff3366;
 }
 
-/* Players Section */
-.players {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  padding: 3rem 1rem;
-  background: #111;
-  flex-wrap: wrap;
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #000;
+  font-size: 0.9rem;
 }
 
+/* Reusable Player Card Style */
 .player-card {
   background: #222;
   border: 2px solid #ff0055;
@@ -133,10 +132,13 @@ header {
   width: 250px;
   text-align: center;
   transition: transform 0.3s ease;
+  flex: 0 0 auto;
 }
 
 .player-card img {
-  width: 100%;
+  width: 220px;
+  height: 300px;
+  object-fit: cover;
   border-radius: 8px;
 }
 
@@ -145,16 +147,69 @@ header {
   box-shadow: 0 0 15px #ff0055;
 }
 
-/* Footer */
-footer {
-  text-align: center;
-  padding: 1rem;
-  background: #000;
-  font-size: 0.9rem;
+/* Players Slider Section */
+.players-slider {
+  background: #111;
+  padding: 3rem 1rem;
+  position: relative;
 }
-.player-card img {
-  width: 220px;
-  height: 300px;
-  object-fit: cover;
-  border-radius: 8px;
+
+.slider-title {
+  text-align: center;
+  color: #ff0055;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.slider-wrapper {
+  position: relative;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  white-space: nowrap;
+  padding: 1rem 0;
+}
+
+.slider-track {
+  display: flex;
+  gap: 2rem;
+  width: max-content;
+}
+
+/* Arrow Buttons */
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 0, 85, 0.8);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+  animation: bounce 2s infinite;
+}
+
+.slider-btn:hover {
+  background: #ff3366;
+}
+
+.slider-btn.left {
+  left: 10px;
+}
+
+.slider-btn.right {
+  right: 10px;
+}
+
+/* Arrow Bounce Animation */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(-50%) scale(1);
+  }
+  50% {
+    transform: translateY(-60%) scale(1.1);
+  }
 }
