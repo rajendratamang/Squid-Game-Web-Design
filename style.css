@@ -82,7 +82,7 @@ header {
   align-items: center;
   min-height: 70vh;
   text-align: center;
-  background: url('https://i.imgur.com/Ad7f4a7.jpg') no-repeat center/cover;
+  background: url('img/background.jpg') no-repeat center/cover;
   position: relative;
 }
 
